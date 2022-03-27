@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Output</h2> 
+    <h3>row {{ row }}, column {{ col }} has {{ result }} liters<br>
+        Note: Only until row {{ row }} will be displayed.</h3>
+
+    {% for i in range(row+1) %}
+        {% for j in range(i+1) %}
+            {% set idx = (i * (i+1)/2 + j) | int %}
+            <font {% if i == row and j == col %} color="red" {% endif %}>
+                {{ '%0.2f' % glasses[idx] }}
+            </font>
+        {% endfor %}
+        <br>
+    {% endfor %}
+
+{% endblock %}

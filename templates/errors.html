@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>ERROR</h2> 
+
+    {% for error in error_list %}
+        <h3>{{ error }}</h3>
+    {% endfor %}
+
+{% endblock %}

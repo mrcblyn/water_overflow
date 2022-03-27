@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Water Overflow Problem</title>
+  </head>
+
+  <body>
+    <center>
+      <h2>Water Overflow Problem</h2>
+      <p>
+        The app will calculate and illustrate how much liters are in the inputted <i>row</i> and <i>column</i> glass when the inputted <i>number of liters</i> are poured into the topmost glass.
+        <li>Row: Integer value for row of glass to check. Should be non-negative.</li>
+        <li>Column: Integer value for column of glass to check. Should be non-negative, and less than or equal to row.</li>
+        <li>Liters: Float value for number of liters to pour on to top glass. Should be non-negative.</li><br>
+      </p>
+      <form action="/volume">
+        <label for="row">Row:</label><br>
+        <input type="text" id="row" name="row" value="{{ request.args['row'] }}""><br>
+        <label for=" col">Column:</label><br>
+        <input type="text" id="col" name="col" value="{{ request.args['col'] }}"><br>
+        <label for="liters">Number of liters:</label><br>
+        <input type="text" id="liters" name="liters" value="{{ request.args['liters'] }}"><br><br>
+        <input type="submit" value="Get output">
+      </form>
+
+      <div class="content">
+        {% block content %} {% endblock %}
+      </div>
+
+    </center>
+  </body>
+
+</html>
