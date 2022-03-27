@@ -3,6 +3,7 @@ Class to represent the stack of glasses and process the water flow.
 """
 
 from .glass import Glass
+from .utils import log_time
 
 
 class GlassController:
@@ -33,6 +34,7 @@ class GlassController:
         """Convert row and column to glass index"""
         return int(self.row * (self.row + 1) / 2) + self.col
 
+    @log_time
     def run(self):
         """
         Process water flow and return:
